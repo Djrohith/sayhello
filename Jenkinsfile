@@ -105,10 +105,11 @@ stage('Deploy') {
         
         
 
-       // http://34.221.40.216:8081/repository/demoapp-rele/br/com/meetup/ansible/soccer-stats/0.0.2-3/soccer-stats-0.0.2-3.war                           
-        def artifactUrl = "http://${NEXUS_URL}/repository/demoapp-rele/br/com/meetup/ansible/soccer-stats/0.0.2-${BUILD_NUMBER}/soccer-stats-0.0.2-${BUILD_NUMBER}.war"
+       // http://34.221.40.216:8081/repository/demoapp-rele/br/com/meetup/ansible/soccer-stats/0.0.2-3/soccer-stats-0.0.2-3.war 
+     
+        def artifactUrl = "http://${NEXUS_URL}/repository/say-hello/com/cg/demo/say-hello/say-hello/0.0.2-${BUILD_NUMBER}/say-hello-0.0.2-${BUILD_NUMBER}.jar"
 
-        withEnv(["ARTIFACT_URL=${artifactUrl}", "APP_NAME='soccer-demo'"]) {
+        withEnv(["ARTIFACT_URL=${artifactUrl}", "APP_NAME='say-hello'"]) {
             echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"
 
             // install galaxy roles
