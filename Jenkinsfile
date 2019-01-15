@@ -32,7 +32,7 @@ stage('Build') {
         }
     }
 }
-
+/**
 if(FULL_BUILD) {
     stage('Unit Tests') {   
         node {
@@ -44,7 +44,7 @@ if(FULL_BUILD) {
     }
 }
 
-/**if(FULL_BUILD) {
+if(FULL_BUILD) {
     stage('Integration Tests') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -84,10 +84,9 @@ if(FULL_BUILD) {
             sh 'cd target | ls'
             
             // TODO remove below line once sonar is up         
-            unstash 'unit_tests'
+            //unstash 'unit_tests'
          
-         sh 'cd target | ls'
-            
+         
             nexusArtifactUploader artifacts: [[groupId: 'say-hello-versions', 
                                                artifactId: 'say-hello', classifier: '',
                                                file: 'target/sayhello-0.0.2-${BUILD_NUMBER}.jar', type: 'jar']],
