@@ -81,12 +81,12 @@ if(FULL_BUILD) {
 if(FULL_BUILD) {
     stage('Artifact Upload') {
         node {
-         
-            sh 'ls '
+            sh 'cd target | ls'
+            
             // TODO remove below line once sonar is up         
             unstash 'unit_tests'
          
-            sh 'ls'
+         sh 'cd target | ls'
             
             nexusArtifactUploader artifacts: [[groupId: 'say-hello-versions', 
                                                artifactId: 'say-hello', classifier: '',
