@@ -44,7 +44,7 @@ if(FULL_BUILD) {
     }
 }
 
-if(FULL_BUILD) {
+if(false) {
     stage('Integration Tests') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -55,7 +55,7 @@ if(FULL_BUILD) {
     }
 }
 
-if(FULL_BUILD) {
+if(false) {
     stage('Static Analysis') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -85,10 +85,10 @@ if(FULL_BUILD) {
             
             nexusArtifactUploader artifacts: [[groupId: 'say-hello-versions', 
                                                artifactId: 'say-hello', classifier: '',
-                                               file: 'target/say-hello-1.0.0-${BUILD_NUMBER}.jar', type: 'jar']],
+                                               file: 'target/say-hello-0.0.2-${BUILD_NUMBER}.jar', type: 'jar']],
                 credentialsId: '92a0b40b-83c4-4a1f-a901-a5859bbcb4a4', 
                 groupId: 'com.cg.demo', nexusUrl: "${NEXUS_URL}", nexusVersion: 'nexus3', 
-                protocol: 'http', repository: 'say-hello', version: '1.0.0-${BUILD_NUMBER}'
+                protocol: 'http', repository: 'say-hello', version: '0.0.2-${BUILD_NUMBER}'
 
              
         }
