@@ -44,7 +44,7 @@ if(FULL_BUILD) {
     }
 }
 
-if(false) {
+/**if(FULL_BUILD) {
     stage('Integration Tests') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -55,7 +55,7 @@ if(false) {
     }
 }
 
-if(false) {
+if(FULL_BUILD) {
     stage('Static Analysis') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -82,8 +82,11 @@ if(FULL_BUILD) {
     stage('Artifact Upload') {
         node {
          
+            sh 'ls '
             // TODO remove below line once sonar is up         
             unstash 'unit_tests'
+         
+            sh 'ls'
             
             nexusArtifactUploader artifacts: [[groupId: 'say-hello-versions', 
                                                artifactId: 'say-hello', classifier: '',
