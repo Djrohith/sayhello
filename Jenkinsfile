@@ -106,6 +106,8 @@ stage('Deploy') {
         
 
        // http://34.221.40.216:8081/repository/demoapp-rele/br/com/meetup/ansible/soccer-stats/0.0.2-3/soccer-stats-0.0.2-3.war 
+                           // http://52.88.118.15:8081/repository/say-hello/com/cg/demo/say-hello/0.0.2-8/say-hello-0.0.2-8.jar
+                            
      
         def artifactUrl = "http://${NEXUS_URL}/repository/say-hello/com/cg/demo/say-hello/0.0.2-${BUILD_NUMBER}/say-hello-0.0.2-${BUILD_NUMBER}.jar"
 
