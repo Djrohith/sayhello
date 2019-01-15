@@ -81,7 +81,9 @@ if(FULL_BUILD) {
 if(FULL_BUILD) {
     stage('Artifact Upload') {
         node {
-           
+         
+            // TODO remove below line once sonar is up         
+            unstash 'unit_tests'
             
             nexusArtifactUploader artifacts: [[groupId: 'say-hello-versions', 
                                                artifactId: 'say-hello', classifier: '',
