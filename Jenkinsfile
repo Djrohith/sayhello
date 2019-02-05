@@ -11,7 +11,7 @@ final HOST_PROVISION = '172.31.42.149'
 
 
 final GIT_URL = 'https://github.com/Djrohith/sayhello.git'
-final NEXUS_URL = '54.212.200.117:8081'
+final NEXUS_URL = '54.213.94.195:8081'
 
 stage('Build') {
     node {
@@ -54,7 +54,7 @@ if(FULL_BUILD) {
         }
     }
 }
-/**
+
 if(FULL_BUILD) {
     stage('Static Analysis') {
         node {
